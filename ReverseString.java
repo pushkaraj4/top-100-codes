@@ -5,22 +5,31 @@ public class ReverseString {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a string to reverse: ");
         String str = sc.nextLine();
-        String reversed = reverseString(str);
+        char[] reversed = reverseString(str);
         System.out.println(reversed);
         sc.close();
     }
 
-    static String reverseString(String str) {
-        // using StringBuffer
-        StringBuffer reversed = new StringBuffer(str);
-        int i = 0;
-        int j = str.length() - 1;
-        while (i < j) {
-            reversed.setCharAt(i, str.charAt(j));
-            reversed.setCharAt(j, str.charAt(i));
-            i++;
-            j--;
+    static char[] reverseString(String str) {
+        // using character array
+        char[] str1 = str.toCharArray();
+        for (int i = 0; i < str1.length / 2; i++) {
+            char temp = str1[i];
+            str1[i] = str1[str1.length - 1 - i];
+            str1[str1.length - 1 - i] = temp;
         }
-        return reversed.toString();
+        
+        // using StringBuffer
+        // StringBuffer reversed = new StringBuffer(str);
+        // int i = 0;
+        // int j = str.length() - 1;
+        // while (i < j) {
+        //     reversed.setCharAt(i, str.charAt(j));
+        //     reversed.setCharAt(j, str.charAt(i));
+        //     i++;
+        //     j--;
+        // }
+        // return reversed.toString();
+        return str1;
     }
 }
