@@ -3,7 +3,7 @@ package Arrays;
 public class SecondSmallest {
     public static void main(String[] args) {
         int[] array = {28, 6, 4, 2, 3, 24};
-        // int[] array = {2,5,7,1,6};
+        
         int ans = secondSmallestSorting(array);
         int ans2 = secondSmallestTwopass(array);
         int ans3 = secondSmallestOnepass(array);
